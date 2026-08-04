@@ -1,0 +1,10 @@
+#include "velvet.dtsi"
+
+&matrix_transform0 {
+    row-offset = <4>;
+};
+
+&physical_layout_velvet {
+    kscan = <&kscan0>;
+};
+
