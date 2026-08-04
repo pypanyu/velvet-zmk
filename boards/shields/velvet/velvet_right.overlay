@@ -1,10 +1,15 @@
-#include "velvet.dtsi"
+#include "pkkblab.dtsi" // 
 
-&matrix_transform0 {
-    col-offset = <4>;
+&default_transform { // The matrix transform for this board is 5 columns over because the left half is 5 columns wide according to the matrix.
+    col-offset = <5>;
 };
 
-&physical_layout_velvet {
-    kscan = <&kscan0>;
+&kscan0 {
+    col-gpios
+        = <&pro_micro 15 GPIO_ACTIVE_HIGH> // COL0
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // COL1
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // COL2
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // COL3
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // COL4
+        ;
 };
-
