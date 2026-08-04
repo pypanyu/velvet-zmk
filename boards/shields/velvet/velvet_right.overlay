@@ -1,10 +1,9 @@
-#include "velvet.dtsi"
-
-&matrix_transform0 {
-    row-offset = <4>;
+/ {
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        gpio-row-ports = <&gpio0 29 GPIO_ACTIVE_HIGH>,
+                         <&gpio0 30 GPIO_ACTIVE_HIGH>;
+        gpio-col-ports = <&gpio0 31 GPIO_ACTIVE_HIGH>,
+                         <&gpio0 28 GPIO_ACTIVE_HIGH>;
+    };
 };
-
-&physical_layout_velvet {
-    kscan = <&kscan0>;
-};
-
